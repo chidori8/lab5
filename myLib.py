@@ -1,10 +1,16 @@
-def bubble_sort(arr):
+#Принимает list содержащий в себе числа
+#Производится сортировка методом пузырьковой сортировки
+#Возвращает отсортированный list
+#Пример: [2, 5, 0, -5, 42] -> [-5, 0, 2, 5, 42]
+import copy
+
+
+def bubble_sort(list):
+    arr = copy.deepcopy(list)
     def swap(i, j):
         arr[i], arr[j] = arr[j], arr[i]
-
     n = len(arr)
     swapped = True
-
     x = -1
     while swapped:
         swapped = False
@@ -15,6 +21,10 @@ def bubble_sort(arr):
                 swapped = True
 
 
+#Принимает n
+#Производится вычисление чисел Фибоначчи
+#Возвращает list чисел Фибоначчи
+#Пример: n = 5 -> [1, 1, 2, 3, 5]
 def fibon(n):
     fib1 = 1
     fib2 = 1
@@ -28,6 +38,9 @@ def fibon(n):
     return list1
 
 
+#Принимает 2 числа, с которыми необходимо произвести вычисления и знак действия
+#Возвращает результат вычислений
+#Пример: 5, 1, + -> 6
 def calc(num1, num2, symb: str):
     if symb == "+":
         return num1 + num2
